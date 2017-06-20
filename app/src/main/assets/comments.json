@@ -1,0 +1,20 @@
+{
+  version : 3.0,
+  reviews : [
+    {
+      quote : "I really liked the pancakes",
+      author : "Mike",
+      score : 1.0
+    },
+    {
+      quote : "The chicken was a little dry",
+      author : "Amit",
+      score : 3.4
+    },
+    {
+      quote : "The decor could use some upgrades",
+      author : "Mary",
+      score : 4.1
+    }
+  ]
+}

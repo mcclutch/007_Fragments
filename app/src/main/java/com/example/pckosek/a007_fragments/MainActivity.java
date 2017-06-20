@@ -1,7 +1,7 @@
 package com.example.pckosek.a007_fragments;
 
 /* ------------------------*/
-/*    FILE VERSION 2.0     */
+/*    FILE VERSION 3.0     */
 /* ------------------------*/
 
 import android.support.v7.app.AppCompatActivity;
@@ -16,12 +16,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.view.WindowManager;
 import android.widget.TextView;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class MainActivity extends AppCompatActivity {
 
-    private SectionsPagerAdapter mSectionsPagerAdapter;
+    private WittyComment mwittyComment;
 
+    private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
 
     @Override
@@ -38,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+
+
+        // PUT THE JSON READING STUFF IN A SEPARATE CLASS TO MAKE THIS CLEANER!!
+        //  [also, an activity is a Context]
+        mwittyComment = new JSONReader(this).readFile();
 
     }
 
