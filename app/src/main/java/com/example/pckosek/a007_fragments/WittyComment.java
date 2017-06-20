@@ -1,9 +1,8 @@
 package com.example.pckosek.a007_fragments;
 
 /* ------------------------*/
-/*    FILE VERSION 3.0     */
+/*    FILE VERSION 4.0     */
 /* ------------------------*/
-
 
 import java.util.ArrayList;
 import java.util.List;

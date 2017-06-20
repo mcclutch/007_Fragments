@@ -1,7 +1,7 @@
 package com.example.pckosek.a007_fragments;
 
 /* ------------------------*/
-/*    FILE VERSION 3.0     */
+/*    FILE VERSION 4.0     */
 /* ------------------------*/
 
 import android.support.v7.app.AppCompatActivity;
@@ -12,15 +12,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
-import android.view.WindowManager;
-import android.widget.TextView;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,53 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    // A Fragment of type #1
-
-    public static class FragmentOne extends Fragment {
-
-        public FragmentOne() {
-        }
-
-        public static FragmentOne newInstance() {
-            FragmentOne fragment = new FragmentOne();
-            return fragment;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_one, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText("This is a Fragment 1");
-            return rootView;
-        }
-    }
-
-    // A Fragment of type #2
-
-    public static class FragmentTwo extends Fragment {
-
-        public FragmentTwo() {
-        }
-
-        public static FragmentTwo newInstance() {
-            FragmentTwo fragment = new FragmentTwo();
-            return fragment;
-        }
-
-
-        // NEW FOR VERSION 2.0 - THIS FRAGMENT USES HIS OWN XML FILE!
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_two, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText("This is a Fragment 2");
-            return rootView;
-        }
-    }
-
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -119,8 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 2;
+            return 2;       // Show 3 total pages.
         }
     }
 }

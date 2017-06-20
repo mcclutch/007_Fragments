@@ -1,7 +1,7 @@
 package com.example.pckosek.a007_fragments;
 
 /* ------------------------*/
-/*    FILE VERSION 3.0     */
+/*    FILE VERSION 4.0     */
 /* ------------------------*/
 
 import android.content.Context;
