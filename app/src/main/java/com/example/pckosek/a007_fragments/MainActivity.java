@@ -1,7 +1,7 @@
 package com.example.pckosek.a007_fragments;
 
 /* ------------------------*/
-/*    FILE VERSION 5.0     */
+/*    FILE VERSION 6.0     */
 /* ------------------------*/
 
 import android.support.v7.app.AppCompatActivity;
@@ -14,12 +14,14 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements FragmentOne.FragmentOneInterface{
 
     private WittyComment mwittyComment;
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
+
+    private int mCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void updateCounter(int i) {
+        mCount = i;
+    }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -57,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
                     return FragmentOne.newInstance();
                 case 1 :
                     return FragmentTwo.newInstance();
+                case 2 :
+                    return FragmentThree.newInstance();
                 default :
                     return null;
             }
@@ -64,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 2;       // Show 3 total pages.
+            return 3;       // Show 3 total pages.
         }
     }
 }

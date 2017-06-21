@@ -2,7 +2,7 @@ package com.example.pckosek.a007_fragments;
 
 
 /* ------------------------*/
-/*    FILE VERSION 5.0     */
+/*    FILE VERSION 6.0     */
 /* ------------------------*/
 
 import android.content.Context;
@@ -32,6 +32,17 @@ public class FragmentOne extends Fragment implements View.OnClickListener{
     }
 
     @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            mCallback = (FragmentOneInterface) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()
+                    + " must implement FragmentOneInterface");
+        }
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_one, container, false);
@@ -47,6 +58,7 @@ public class FragmentOne extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         mClickCounter++;
         mTextView.setText(mClickCounter+"");
+        mCallback.updateCounter(mClickCounter);
     }
 
     public interface FragmentOneInterface {

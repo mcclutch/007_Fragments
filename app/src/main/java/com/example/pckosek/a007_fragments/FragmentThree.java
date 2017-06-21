@@ -11,13 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class FragmentTwo extends Fragment {
+public class FragmentThree extends Fragment {
 
-    public FragmentTwo() {
+    public FragmentThree() {
     }
 
-    public static FragmentTwo newInstance() {
-        FragmentTwo fragment = new FragmentTwo();
+    public static FragmentThree newInstance() {
+        FragmentThree fragment = new FragmentThree();
         return fragment;
     }
 
@@ -27,9 +27,9 @@ public class FragmentTwo extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_two, container, false);
-        TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-        textView.setText("This is a Fragment 2");
+        View rootView = inflater.inflate(R.layout.fragment_three, container, false);
+        TextView textView = (TextView) rootView.findViewById(R.id.tv_f3);
+        textView.setText("This is a Fragment 3");
         return rootView;
     }
 }
